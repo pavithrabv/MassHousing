@@ -1,0 +1,5 @@
+.idea/
+phase-1/src/*.pyc
+phase-1/src/*.pyo
+*.pyc
+*.pyo
