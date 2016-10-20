@@ -13,19 +13,18 @@ def load_data_from_csv():
 
     raw_training_data = np.genfromtxt(raw_training_csv_file, delimiter=',', dtype='f8',
                                       filling_values=0.00000000, skip_header=1,
-                                      usecols=(0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13),
-                                      converters={0: convertfunc, 2: convertfunc, 3: convertfunc,
+                                      usecols=(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13),
+                                      converters={2: convertfunc, 3: convertfunc,
                                                   4: convertfunc, 5: convertfunc, 6: convertfunc,
                                                   7: convertfunc, 8: convertfunc,9: convertfunc,
                                                   10: convertfunc, 11: convertfunc, 12: convertfunc,
                                                   13: convertfunc})
     raw_test_data = np.genfromtxt(raw_test_csv_file, delimiter=',', dtype='f8', filling_values=0.00000000,
-                                  skip_header=1, usecols=(0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13),
-                                  converters={0: convertfunc, 2: convertfunc, 3: convertfunc,
+                                  skip_header=1, usecols=(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13),
+                                  converters={2: convertfunc, 3: convertfunc,
                                               4: convertfunc, 5: convertfunc, 6: convertfunc,
                                               7: convertfunc, 8: convertfunc, 9: convertfunc,
-                                              10: convertfunc, 11: convertfunc, 12: convertfunc,
-                                              13: convertfunc})
+                                              10: convertfunc, 11: convertfunc, 12: convertfunc})
 
     return raw_training_data, raw_test_data
 

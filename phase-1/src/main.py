@@ -14,7 +14,7 @@ training_data, test_data = mnist_csv_loader.get_data_for_analysis()
 #  5 output neurons, corresponding to each of the 5 grade values
 middleLayerCount = random.randint(100,110)
 print "Middle Layer count {0}".format(middleLayerCount)
-list = [12, middleLayerCount, 5]
+list = [11, middleLayerCount, 5]
 #
 # # create a Network object
 #     # initilize object with a list (see above)
