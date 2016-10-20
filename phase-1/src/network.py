@@ -16,6 +16,7 @@ import random
 # Third-party libraries
 import numpy as np
 
+
 class Network(object):
 
     def __init__(self, sizes):
@@ -135,6 +136,10 @@ class Network(object):
 def sigmoid(z):
     """The sigmoid function."""
     return 1.0/(1.0+np.exp(-z))
+    #return logistic_function(z)
+
+def logistic_function(x):
+    return .5 * (1 + np.tanh(.5 * x))
 
 def sigmoid_prime(z):
     """Derivative of the sigmoid function."""

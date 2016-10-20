@@ -12,7 +12,7 @@ training_data, test_data = mnist_csv_loader.get_data_for_analysis()
 #  13 neurons in the input layer, corresponding to each data field per training example on the csv
 #  14 hidden neurons (random choice, may be changed)
 #  5 output neurons, corresponding to each of the 5 grade values
-middleLayerCount = random.randint(20,40)
+middleLayerCount = random.randint(100,110)
 print "Middle Layer count {0}".format(middleLayerCount)
 list = [12, middleLayerCount, 5]
 #
