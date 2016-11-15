@@ -16,6 +16,7 @@ features.
 import json
 import random
 import sys
+import datetime
 
 # Third-party libraries
 import numpy as np
@@ -99,6 +100,8 @@ class Network(object):
         self.biases = [np.random.randn(y, 1) for y in self.sizes[1:]]
         self.weights = [np.random.randn(y, x)/np.sqrt(x)
                         for x, y in zip(self.sizes[:-1], self.sizes[1:])]
+        #print self.biases
+        #print self.weights
 
     def large_weight_initializer(self):
         """Initialize the weights using a Gaussian distribution with mean 0
@@ -156,6 +159,7 @@ class Network(object):
         n = len(training_data)
         evaluation_cost, evaluation_accuracy = [], []
         training_cost, training_accuracy = [], []
+        max_accuracy = 0
         for j in xrange(epochs):
             random.shuffle(training_data)
             mini_batches = [
@@ -183,6 +187,9 @@ class Network(object):
                 evaluation_accuracy.append(accuracy)
                 print "Accuracy on evaluation data: {} / {}".format(
                     self.accuracy(evaluation_data), n_data)
+            if accuracy > max_accuracy:
+                max_accuracy = accuracy
+                self.save(str(datetime.datetime.now())+".json")
             print
         return evaluation_cost, evaluation_accuracy, \
             training_cost, training_accuracy
@@ -294,7 +301,7 @@ class Network(object):
                 "biases": [b.tolist() for b in self.biases],
                 "cost": str(self.cost.__name__)}
         f = open(filename, "w")
-        json.dump(data, f)
+        json.dump(data, f, sort_keys=True, indent=4, separators=(',', ': '))
         f.close()
 
 #### Loading a Network

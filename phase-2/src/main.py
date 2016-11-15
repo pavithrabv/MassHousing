@@ -20,6 +20,7 @@ list = [51, 7, 5]
 #     # initilize object with a list (see above)
 #     # list specifies network structure
 net = network2.Network(list)
+#net = network2.load("/Users/pavithra/pycharm-projects/MassHousing/phase-2/src/2016-11-15 09:24:07.242226.json")
 #
 # # begin training your Network object
 #
